@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyWriter - Hra na psaní</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-header">
+            <h1>KeyWriter</h1>
+            <div class="stats">
+                <div class="level">Level: <span id="level">1</span></div>
+                <div class="timer">Čas: <span id="timer">60</span>s</div>
+                <div class="score">Skóre: <span id="score">0</span></div>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <div id="target-text" class="target-text"></div>
+            <input type="text" id="user-input" class="user-input" placeholder="Začněte psát..." autocomplete="off">
+        </div>
+
+        <div class="controls">
+            <button id="start-button">Start</button>
+            <button id="restart-button" style="display: none;">Restart</button>
+        </div>
+
+        <div id="game-over" class="game-over" style="display: none;">
+            <h2>Konec hry!</h2>
+            <p>Dosažený level: <span id="final-level">0</span></p>
+            <p>Finální skóre: <span id="final-score">0</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

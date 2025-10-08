@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f7e9;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(144, 175, 97, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+h1 {
+    color: #7d9f35;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #8a9a5b;
+}
+
+.game-area {
+    margin-bottom: 2.5rem;
+}
+
+.target-text {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    min-height: 3rem;
+    color: #5a7233;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.user-input {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.3rem;
+    border: 2px solid #d4e3b5;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #fafdf5;
+    color: #5a7233;
+}
+
+.user-input:focus {
+    border-color: #7d9f35;
+    box-shadow: 0 0 0 3px rgba(125, 159, 53, 0.1);
+}
+
+.controls {
+    text-align: center;
+}
+
+button {
+    background-color: #7d9f35;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #8a9a5b;
+    transform: translateY(-2px);
+}
+
+.game-over {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #fafdf5;
+    border-radius: 12px;
+    border: 2px solid #d4e3b5;
+}
+
+.game-over h2 {
+    color: #7d9f35;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.game-over p {
+    margin: 0.8rem 0;
+    color: #8a9a5b;
+    font-size: 1.1rem;
+} 

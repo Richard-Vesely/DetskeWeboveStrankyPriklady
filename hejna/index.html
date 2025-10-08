@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boids Flocking Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Boids Flocking Simulation</h1>
+        
+        <div class="simulation-container">
+            <canvas id="simulation"></canvas>
+        </div>
+        
+        <div class="controls">
+            <h2>Simulation Parameters</h2>
+            
+            <div class="control-group">
+                <label for="numBoids">Number of Boids:</label>
+                <input type="range" id="numBoids" min="10" max="300" value="100">
+                <span id="numBoidsValue">100</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="separationForce">Separation Force:</label>
+                <input type="range" id="separationForce" min="0" max="0.2" step="0.01" value="0.05">
+                <span id="separationForceValue">0.05</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="alignmentForce">Alignment Force:</label>
+                <input type="range" id="alignmentForce" min="0" max="0.2" step="0.01" value="0.05">
+                <span id="alignmentForceValue">0.05</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="cohesionForce">Cohesion Force:</label>
+                <input type="range" id="cohesionForce" min="0" max="0.2" step="0.01" value="0.05">
+                <span id="cohesionForceValue">0.05</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="perceptionRadius">Perception Radius:</label>
+                <input type="range" id="perceptionRadius" min="20" max="150" value="50">
+                <span id="perceptionRadiusValue">50</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="maxSpeed">Max Speed:</label>
+                <input type="range" id="maxSpeed" min="1" max="10" value="4">
+                <span id="maxSpeedValue">4</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="scareRadius">Scare Radius:</label>
+                <input type="range" id="scareRadius" min="50" max="300" value="100">
+                <span id="scareRadiusValue">100</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="scareFactor">Scare Force Factor:</label>
+                <input type="range" id="scareFactor" min="0.1" max="5" step="0.1" value="1">
+                <span id="scareFactorValue">1</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="scareEffect">Scare Effect Duration (ms):</label>
+                <input type="range" id="scareEffect" min="500" max="5000" step="100" value="2000">
+                <span id="scareEffectValue">2000</span>
+            </div>
+            
+            <button id="resetBtn">Reset Simulation</button>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Reynolds' Boids Model Simulation - Periodic Boundary Conditions - Click to scare the boids!</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html> 

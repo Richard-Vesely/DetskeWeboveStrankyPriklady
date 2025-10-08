@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.game-container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-area {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    background-color: #e8f5e9;
+    border-radius: 8px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.dog {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease;
+}
+
+.dog img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.bone {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.bone img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#throwBone {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#throwBone:hover {
+    background-color: #45a049;
+}
+
+.score {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+@keyframes jump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.dog.jumping {
+    animation: jump 0.5s ease;
+} 

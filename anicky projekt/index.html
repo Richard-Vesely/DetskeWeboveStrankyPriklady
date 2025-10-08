@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Můj Virtuální Zvěřinec</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Můj Virtuální Zvěřinec</h1>
+    </header>
+    
+    <main>
+        <section class="pet-selection">
+            <h2>Vyber si svého mazlíčka</h2>
+            <div class="pets-container">
+                <div class="pet-option" data-pet="pes">
+                    <img src="images/pes_happy.jpeg" alt="Pes">
+                    <h3>Pes</h3>
+                </div>
+                <div class="pet-option" data-pet="kocka">
+                    <img src="images/kocka_happy.png" alt="Kočka">
+                    <h3>Kočka</h3>
+                </div>
+                <div class="pet-option" data-pet="kralik">
+                    <img src="images/kralik_happy.png" alt="Králík">
+                    <h3>Králík</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="pet-care" style="display: none;">
+            <h2>Péče o mazlíčka</h2>
+            
+            <div class="pet-display">
+                <div class="pet-image-container">
+                    <img id="pet-image" src="" alt="Tvůj mazlíček">
+                </div>
+                
+                <div class="pet-emotions">
+                    <div class="emotion" id="hunger-emotion">
+                        <i class="fas fa-drumstick-bite"></i>
+                        <span class="emotion-level" id="hunger-level">100%</span>
+                    </div>
+                    <div class="emotion" id="happiness-emotion">
+                        <i class="fas fa-smile-beam"></i>
+                        <span class="emotion-level" id="happiness-level">100%</span>
+                    </div>
+                    <div class="emotion" id="cleanliness-emotion">
+                        <i class="fas fa-bath"></i>
+                        <span class="emotion-level" id="cleanliness-level">100%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="actions">
+                <button id="feed"><i class="fas fa-utensils"></i> Nakrmit</button>
+                <button id="play"><i class="fas fa-gamepad"></i> Hrát si</button>
+                <button id="clean"><i class="fas fa-shower"></i> Vyčistit</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,82 @@
+/* Overall page styles */
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    font-family: 'VT323', monospace; /* Using the digital font */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  /* Container styles */
+  .container {
+    text-align: center;
+  }
+  
+  /* Input field styles */
+  input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    width: 300px;
+  }
+  
+  /* Button styles */
+  button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #444;
+    color: #fff;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #666;
+  }
+  
+  /* Neon text effect (output is larger now) */
+  .neon-text {
+    margin-top: 20px;
+    font-size: 4em;
+    color: #fff;
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #ff00de,
+      0 0 30px #ff00de,
+      0 0 40px #ff00de,
+      0 0 55px #ff00de,
+      0 0 75px #ff00de;
+  }
+  
+  /* Back button styles */
+  #backButton {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    opacity: 0.2;  /* Almost hidden */
+    background: #444;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    display: none; /* Hidden by default */
+  }
+  
+  #backButton:hover {
+    opacity: 1;
+  }
+  
