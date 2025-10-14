@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombie Healer - Uteč a vyléč!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🧟‍♂️ Zombie Healer 🏥</h1>
+            <div class="stats">
+                <span>💊 Léky: <span id="medicine-count">0</span></span>
+                <span>❤️ Život: <span id="health">100</span></span>
+                <span>🎯 Skóre: <span id="score">0</span></span>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div class="controls">
+            <p>🎮 Ovládání: WASD nebo šipky pro pohyb, mezerník pro házení léků</p>
+            <button id="startBtn">🚀 Začít hru</button>
+            <button id="restartBtn" style="display: none;">🔄 Nová hra</button>
+        </div>
+        
+        <div class="game-over" id="gameOver" style="display: none;">
+            <h2>Hra skončila!</h2>
+            <p>Vaše skóre: <span id="finalScore">0</span></p>
+            <button id="playAgainBtn">Hrát znovu</button>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html> 

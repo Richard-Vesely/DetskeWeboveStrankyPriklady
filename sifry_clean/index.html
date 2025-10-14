@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tvůrce Tajných Kódů</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Tvůrce Tajných Kódů 🔍</h1>
+        
+        <div class="input-group">
+            <label for="message">Tvá zpráva:</label>
+            <textarea id="message" rows="4" placeholder="Napiš svou tajnou zprávu zde..."></textarea>
+        </div>
+        
+        <div class="input-group">
+            <label for="codeKey">Tajný klíč:</label>
+            <input type="text" id="codeKey" placeholder="Například: ahoj">
+        </div>
+        
+        <div class="button-group">
+            <button id="encodeBtn">Zašifrovat! 🔒</button>
+            <button id="decodeBtn">Dešifrovat! 🔓</button>
+        </div>
+        
+        <div class="result-container">
+            <h3>Výsledek:</h3>
+            <p id="result">Tvá zašifrovaná nebo dešifrovaná zpráva se objeví zde!</p>
+        </div>
+        
+        <div class="explanation">
+            <h3>Jak to funguje:</h3>
+            <p>Každé písmeno v tvé zprávě je posunuto o hodnotu odpovídajícího písmene v tajném klíči.
+            Například s klíčem "ahoj" a zprávou "Já jsem skvělý",
+            'J' se posune o 'a', 'á' se posune o 'h', a tak dále. Když dojdou písmena v klíči, začínáme znovu!</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 

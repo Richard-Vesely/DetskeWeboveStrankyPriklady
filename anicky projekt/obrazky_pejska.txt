@@ -1,0 +1,27 @@
+# Popis obrázků pejska pro aplikaci Virtuální Zvěřinec
+
+## pes_happy.png - Šťastný pejsek
+- Široký úsměv s vyplazeným jazykem
+- Zářivé, veselé oči
+- Vzpřímené uši
+- Aktivní, hravý postoj
+- Možná zdvižený ocas, který vypadá, že se třepe
+- Jasné, zářivé barvy
+
+## pes_medium.png - Neutrální pejsek
+- Normální, klidný výraz
+- Ústa zavřená nebo lehce pootevřená, ale ne s úsměvem
+- Normální postavení uší
+- Klidný postoj
+- Ocas v neutrální poloze
+- Standardní barvy, ne tak zářivé
+
+## pes_sad.png - Smutný pejsek
+- Svěšená hlava
+- Smutné, skleslé oči
+- Svěšené uši
+- Lehce skloněný postoj
+- Ocas svěšený dolů
+- Tlumenější barvy, méně saturované
+
+Tyto obrázky by měly být ve formátu PNG s průhledným pozadím, ideálně ve velikosti alespoň 300x300 pixelů pro dobrou kvalitu zobrazení. Důležité je zachovat stejný styl a charakter pejska na všech třech obrázcích, aby bylo jasné, že jde o stejné zvíře, jen v různých náladách. 

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Club Demo Websites</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .project-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 20px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .btn-website {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+        }
+
+        .btn-website:hover {
+            background: linear-gradient(45deg, #45a049, #4CAF50);
+            transform: translateY(-2px);
+        }
+
+        .btn-source {
+            background: linear-gradient(45deg, #2196F3, #1976D2);
+            color: white;
+        }
+
+        .btn-source:hover {
+            background: linear-gradient(45deg, #1976D2, #2196F3);
+            transform: translateY(-2px);
+        }
+
+        .loading {
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            margin: 50px 0;
+        }
+
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Programming Club Demo Websites</h1>
+            <p>Interactive games and projects created by our programming club</p>
+        </div>
+
+        <div id="loading" class="loading">
+            Loading projects...
+        </div>
+
+        <div id="error" class="error" style="display: none;">
+            Unable to load projects. Please check the console for details.
+        </div>
+
+        <div id="projects-container" class="projects-grid" style="display: none;">
+            <!-- Projects will be loaded here dynamically -->
+        </div>
+
+        <div class="footer">
+            <p>Built with ❤️ for the Programming Club</p>
+        </div>
+    </div>
+
+    <script>
+        // List of known projects with their descriptions
+        const projectDescriptions = {
+            '2D_minecraft': '2D Minecraft-style building and exploration game',
+            'anetky hra': 'Anetky\'s interactive game project',
+            'anetky projekt': 'Anetky\'s web development project',
+            'anicky projekt': 'Anicky\'s project with cute dog images',
+            'Chytni zelený čtverec': 'Catch the green square game - test your reflexes!',
+            'ColorCatch': 'Color matching game with increasing difficulty',
+            'Demo styl': 'Styling demonstration and examples',
+            'fireworks': 'Beautiful fireworks animation and effects',
+            'flappy_bird': 'Flappy Bird game recreation',
+            'hejna': 'Flock simulation and animation project',
+            'keywriter': 'Typing practice and speed test application',
+            'magicke canvas': 'Magic canvas with interactive drawing features',
+            'oskarova webovka': 'Oskar\'s personal website',
+            'PacMan demo': 'Classic Pac-Man game recreation',
+            'Print pretty': 'Text formatting and pretty printing tool',
+            'šifry': 'Cryptography and cipher demonstration',
+            'zombie hra': 'Zombie survival game with action elements'
+        };
+
+        // Function to check if a folder contains an index.html file
+        async function checkForIndexHtml(folderName) {
+            try {
+                const response = await fetch(`./${folderName}/index.html`, { method: 'HEAD' });
+                return response.ok;
+            } catch (error) {
+                return false;
+            }
+        }
+
+        // Function to get all folders (this is a simplified approach for GitHub Pages)
+        async function getProjectFolders() {
+            // For GitHub Pages, we'll use a predefined list since we can't dynamically list directories
+            const knownFolders = [
+                '2D_minecraft',
+                'anetky hra',
+                'anetky projekt',
+                'anicky projekt',
+                'Chytni zelený čtverec',
+                'ColorCatch', 
+                'Demo styl',
+                'fireworks',
+                'flappy_bird',
+                'hejna',
+                'keywriter',
+                'magicke canvas',
+                'oskarova webovka',
+                'PacMan demo',
+                'Print pretty',
+                'šifry',
+                'zombie hra'
+            ];
+
+            const validProjects = [];
+            
+            for (const folder of knownFolders) {
+                const hasIndex = await checkForIndexHtml(folder);
+                if (hasIndex) {
+                    validProjects.push(folder);
+                }
+            }
+            
+            return validProjects;
+        }
+
+        // Function to create project card HTML
+        function createProjectCard(folderName) {
+            const description = projectDescriptions[folderName] || 'Interactive programming project';
+            const encodedFolderName = encodeURIComponent(folderName);
+            
+            return `
+                <div class="project-card">
+                    <div class="project-name">${folderName}</div>
+                    <div class="project-description">${description}</div>
+                    <div class="button-group">
+                        <a href="./${encodedFolderName}/index.html" class="btn btn-website" target="_blank">
+                            🌐 View Website
+                        </a>
+                        <a href="https://github.com/${getGitHubInfo()}/tree/main/${encodedFolderName}" class="btn btn-source" target="_blank">
+                            📁 View Source
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to get GitHub repository info
+        function getGitHubInfo() {
+            // GitHub repository: Richard-Vesely/DetskeWeboveStrankyPriklady
+            return 'Richard-Vesely/DetskeWeboveStrankyPriklady';
+        }
+
+        // Function to load and display projects
+        async function loadProjects() {
+            try {
+                const loadingElement = document.getElementById('loading');
+                const errorElement = document.getElementById('error');
+                const projectsContainer = document.getElementById('projects-container');
+
+                loadingElement.style.display = 'block';
+                errorElement.style.display = 'none';
+                projectsContainer.style.display = 'none';
+
+                const projects = await getProjectFolders();
+                
+                if (projects.length === 0) {
+                    errorElement.textContent = 'No projects found.';
+                    errorElement.style.display = 'block';
+                    loadingElement.style.display = 'none';
+                    return;
+                }
+
+                // Create HTML for all projects
+                const projectsHTML = projects.map(createProjectCard).join('');
+                projectsContainer.innerHTML = projectsHTML;
+
+                loadingElement.style.display = 'none';
+                projectsContainer.style.display = 'grid';
+
+            } catch (error) {
+                console.error('Error loading projects:', error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+
+        // Load projects when the page loads
+        document.addEventListener('DOMContentLoaded', loadProjects);
+    </script>
+</body>
+</html>

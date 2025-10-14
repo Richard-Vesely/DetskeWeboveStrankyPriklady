@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f0f0f0;
+}
+#game-container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 30px auto;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+#square {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #1ec41e;
+    border-radius: 8px;
+    cursor: pointer;
+    display: none;
+}
+#info {
+    margin: 20px;
+    font-size: 1.2em;
+}
+#start-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    background: #1ec41e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#start-btn:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+@keyframes blinkRed {
+    0% { background: #ffb3b3; }
+    100% { background: #fff; }
+}
+
+.blink-red {
+    animation: blinkRed 0.2s;
+    background: #ffb3b3 !important;
+} 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHOJ VLKU</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>AHOJ VLKU</h1>
+        <div class="stats">
+            <div class="score">Skóre: <span id="score">0</span></div>
+            <div class="lives">Životy: <span id="hearts"></span></div>
+        </div>
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+        <div class="controls">
+            <button id="startButton">Start</button>
+            <p class="instructions">Ovládání: Šipkami (← →) pohybujete vlkem, mezerníkem skáčete</p>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html> 

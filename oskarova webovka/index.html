@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oskar je nejlepší</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+            background-size: 1800% 1800%;
+            animation: rainbow-bg 18s ease infinite;
+            overflow-x: hidden;
+        }
+        
+        @keyframes rainbow-bg {
+            0% { background-position: 0% 82% }
+            50% { background-position: 100% 19% }
+            100% { background-position: 0% 82% }
+        }
+        
+        .container {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 8px solid transparent;
+            border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            border-image-slice: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 80%;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            position: relative;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbow-text 5s infinite;
+        }
+        
+        @keyframes rainbow-text {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        
+        .characters {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .character {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .character img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: contain;
+            margin-bottom: 10px;
+            border: 3px solid transparent;
+            border-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+            border-image-slice: 1;
+        }
+        .character p {
+            font-weight: bold;
+            font-size: 1.2rem;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .marker {
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        .marker img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid transparent;
+            border-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+            border-image-slice: 1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .marker p {
+            font-weight: bold;
+            font-size: 1.2rem;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-top: 10px;
+        }
+        .person {
+            margin: 0 0 20px 0;
+            text-align: center;
+            position: relative;
+            min-height: 220px;
+        }
+        .person-container {
+            position: relative;
+            width: 180px;
+            margin: 0 auto;
+            animation: rainbow-border 5s infinite;
+        }
+        
+        @keyframes rainbow-border {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        
+        .food-plate {
+            position: absolute;
+            width: 80px;
+            height: 20px;
+            background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8);
+            border-radius: 50%;
+            top: -20px;
+            left: 50%;
+            margin-left: -40px;
+            z-index: 6;
+            border: 2px solid #999;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            transform: perspective(40px) rotateX(5deg);
+        }
+        .food {
+            position: absolute;
+        }
+        .spaghetti {
+            width: 60px;
+            height: 30px;
+            background-color: #FFE4B5;
+            border-radius: 30px 30px 20px 20px;
+            top: -38px;
+            left: 50%;
+            margin-left: -30px;
+            z-index: 7;
+            animation: rainbow-food 8s infinite alternate;
+        }
+        
+        @keyframes rainbow-food {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        
+        .meatball {
+            width: 15px;
+            height: 15px;
+            background-color: #8B4513;
+            border-radius: 50%;
+            z-index: 8;
+            animation: rainbow-food 8s infinite alternate;
+        }
+        .meatball1 {
+            top: -38px;
+            left: 60px;
+        }
+        .meatball2 {
+            top: -33px;
+            left: 100px;
+        }
+        .meatball3 {
+            top: -35px;
+            left: 85px;
+        }
+        .sauce {
+            width: 15px;
+            height: 8px;
+            background-color: #B22222;
+            border-radius: 50%;
+            top: -42px;
+            left: 75px;
+            z-index: 8;
+            animation: rainbow-food 8s infinite alternate;
+        }
+        .babicka {
+            position: absolute;
+            top: -70px;
+            right: 20px;
+            z-index: 9;
+        }
+        .babicka-head {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(124deg, #ff9999, #ffb6c1, #ffcccc, #ffdab9);
+            border-radius: 50%;
+            position: relative;
+            border: 2px solid #ff9999;
+            animation: rainbow-baby 8s infinite alternate;
+        }
+        
+        @keyframes rainbow-baby {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        
+        .babicka-body {
+            width: 30px;
+            height: 25px;
+            background: linear-gradient(45deg, #a8e6ff, #66c2ff, #1e90ff, #00bfff);
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            top: 30px;
+            left: 2px;
+            z-index: -1;
+            animation: rainbow-baby 8s infinite alternate;
+        }
+        .babicka-hair {
+            position: absolute;
+            width: 35px;
+            height: 12px;
+            background: linear-gradient(45deg, #f9d787, #ffd700, #f0e68c);
+            border-radius: 50% 50% 0 0;
+            top: -5px;
+            left: 0;
+            animation: rainbow-baby 8s infinite alternate;
+        }
+        .babicka-hairtuft {
+            position: absolute;
+            width: 10px;
+            height: 8px;
+            background-color: #f9d787;
+            border-radius: 50%;
+            top: -8px;
+            left: 12px;
+            animation: rainbow-baby 8s infinite alternate;
+        }
+        .babicka-bow {
+            position: absolute;
+            width: 16px;
+            height: 8px;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            border-radius: 4px;
+            top: -2px;
+            left: 10px;
+            animation: rainbow-text 5s infinite;
+        }
+        .babicka-bow::before, .babicka-bow::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            border-radius: 50% 50% 0 50%;
+            top: -4px;
+            animation: rainbow-text 5s infinite;
+        }
+        .babicka-bow::before {
+            left: -4px;
+            transform: rotate(45deg);
+        }
+        .babicka-bow::after {
+            right: -4px;
+            transform: rotate(-45deg);
+        }
+        .babicka-eye {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #333;
+            border-radius: 50%;
+            top: 12px;
+            z-index: 10;
+        }
+        .babicka-eye-left {
+            left: 8px;
+        }
+        .babicka-eye-right {
+            right: 8px;
+        }
+        .babicka-mouth {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff9999;
+            border-radius: 50%;
+            bottom: 7px;
+            left: 50%;
+            margin-left: -5px;
+            z-index: 10;
+        }
+        .babicka-cheek {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #ff9999;
+            border-radius: 50%;
+            top: 18px;
+            opacity: 0.7;
+        }
+        .babicka-cheek-left {
+            left: 3px;
+        }
+        .babicka-cheek-right {
+            right: 3px;
+        }
+        .babicka-pacifier {
+            position: absolute;
+            width: 14px;
+            height: 8px;
+            background: linear-gradient(45deg, #a8e6ff, #66c2ff, #1e90ff);
+            border-radius: 50%;
+            bottom: 4px;
+            left: 50%;
+            margin-left: -7px;
+            border: 1px solid #66c2ff;
+            z-index: 11;
+            animation: rainbow-baby 8s infinite alternate;
+        }
+        .babicka-pacifier::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: #ff9999;
+            border-radius: 50%;
+            top: 1px;
+            left: 4px;
+        }
+        .babicka-drool {
+            position: absolute;
+            width: 4px;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50% 50% 0 0;
+            bottom: -5px;
+            left: 18px;
+            z-index: 9;
+        }
+        .babicka-arm {
+            position: absolute;
+            width: 6px;
+            height: 15px;
+            background-color: #ffdfcc;
+            border-radius: 3px;
+            top: 35px;
+            animation: rainbow-baby 8s infinite alternate;
+        }
+        .babicka-arm-left {
+            left: 3px;
+            transform: rotate(30deg);
+        }
+        .babicka-arm-right {
+            right: 3px;
+            transform: rotate(-30deg);
+        }
+        .dedecek {
+            position: absolute;
+            top: -80px;
+            left: 20px;
+            z-index: 9;
+        }
+        .dedecek-glow {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            background: radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, rgba(255, 165, 0, 0.6) 15%, rgba(255, 255, 0, 0.6) 30%, rgba(0, 128, 0, 0.6) 45%, rgba(0, 0, 255, 0.6) 60%, rgba(75, 0, 130, 0.6) 75%, rgba(238, 130, 238, 0.4) 90%, rgba(255, 255, 255, 0) 100%);
+            border-radius: 50%;
+            top: -5px;
+            left: -5px;
+            z-index: -1;
+            animation: rainbow-pulse 4s infinite;
+        }
+        
+        @keyframes rainbow-pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+        
+        .dedecek-head {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(45deg, #e0e0e0, #a9a9a9, #778899, #708090);
+            border-radius: 50%;
+            position: relative;
+            border: 2px solid #666;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            animation: rainbow-grandpa 10s infinite alternate;
+        }
+        
+        @keyframes rainbow-grandpa {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        
+        .dedecek-stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-image: 
+                radial-gradient(circle, white 1px, transparent 1px),
+                radial-gradient(circle, white 1px, transparent 1px),
+                radial-gradient(circle, white 1px, transparent 1px),
+                radial-gradient(circle, white 1px, transparent 1px),
+                radial-gradient(circle, white 1px, transparent 1px);
+            background-size: 100% 100%;
+            background-position: 
+                10px 5px,
+                25px 12px,
+                18px 22px,
+                7px 18px,
+                28px 28px;
+            opacity: 0.6;
+            animation: twinkle 3s infinite alternate;
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.9; }
+        }
+        
+        .dedecek-body {
+            width: 42px;
+            height: 25px;
+            background: linear-gradient(to bottom, #696969, #2f4f4f, #4682b4, #5f9ea0);
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            top: 32px;
+            left: -2px;
+            z-index: -1;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+            animation: rainbow-grandpa 10s infinite alternate;
+        }
+        .dedecek-hair {
+            position: absolute;
+            width: 50px;
+            height: 30px;
+            background: linear-gradient(to bottom, white, #e0e0e0, #d3d3d3, #c0c0c0);
+            border-radius: 50% 50% 0 0;
+            top: -20px;
+            left: -6px;
+            z-index: -1;
+            animation: rainbow-grandpa 10s infinite alternate;
+        }
+        .dedecek-beard {
+            position: absolute;
+            width: 45px;
+            height: 40px;
+            background: linear-gradient(to bottom, white, #e0e0e0, #d3d3d3, #c0c0c0);
+            border-radius: 40% 40% 50% 50%;
+            bottom: -25px;
+            left: -5px;
+            z-index: -1;
+            animation: rainbow-grandpa 10s infinite alternate;
+        }
+        .dedecek-glasses {
+            position: absolute;
+            width: 12px;
+            height: 8px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            top: 12px;
+            z-index: 10;
+            animation: rainbow-grandpa 10s infinite alternate;
+        }
+        .dedecek-glasses-left {
+            left: 5px;
+        }
+        .dedecek-glasses-right {
+            right: 5px;
+        }
+        .dedecek-glasses-bridge {
+            position: absolute;
+            width: 7px;
+            height: 2px;
+            background-color: #333;
+            top: 14px;
+            left: 14px;
+            z-index: 10;
+            animation: rainbow-grandpa 10s infinite alternate;
+        }
+        .dedecek-eye {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(to right, #00bfff, #1e90ff, #4169e1, #0000ff);
+            border-radius: 50%;
+            top: 12px;
+            z-index: 11;
+            box-shadow: 0 0 5px #87cefa;
+            animation: rainbow-text 5s infinite;
+        }
+        .dedecek-eye-left {
+            left: 7px;
+        }
+        .dedecek-eye-right {
+            right: 7px;
+        }
+        .dedecek-eyebrow {
+            position: absolute;
+            width: 12px;
+            height: 3px;
+            background: linear-gradient(to right, #f0f0f0, white, #d3d3d3);
+            top: 5px;
+            z-index: 10;
+            animation: rainbow-grandpa 10s infinite alternate;
+        }
+        .dedecek-eyebrow-left {
+            left: 4px;
+            transform: rotate(-10deg);
+        }
+        .dedecek-eyebrow-right {
+            right: 4px;
+            transform: rotate(10deg);
+        }
+        .dedecek-wrinkles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .dedecek-wrinkle {
+            position: absolute;
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.2);
+            left: 50%;
+            z-index: 10;
+        }
+        .dedecek-wrinkle1 {
+            width: 20px;
+            top: 8px;
+            margin-left: -10px;
+        }
+        .dedecek-wrinkle2 {
+            width: 25px;
+            top: 16px;
+            margin-left: -12px;
+        }
+        .dedecek-wrinkle3 {
+            width: 22px;
+            top: 22px;
+            margin-left: -11px;
+        }
+        .dedecek-wrinkle4 {
+            width: 18px;
+            top: 28px;
+            margin-left: -9px;
+        }
+        .dedecek-wrinkle5 {
+            width: 15px;
+            top: 4px;
+            margin-left: -8px;
+        }
+        .dedecek-wrinkle6 {
+            width: 14px;
+            top: 24px;
+            margin-left: -7px;
+            transform: rotate(15deg);
+        }
+        .dedecek-wrinkle7 {
+            width: 14px;
+            top: 20px;
+            margin-left: -7px;
+            transform: rotate(-15deg);
+        }
+        .dedecek-arm {
+            position: absolute;
+            width: 7px;
+            height: 20px;
+            background: linear-gradient(to bottom, #a9a9a9, #696969, #808080);
+            border-radius: 3px;
+            top: 35px;
+            z-index: -2;
+            animation: rainbow-grandpa 10s infinite alternate;
+        }
+        .dedecek-arm-left {
+            left: 2px;
+            transform: rotate(30deg);
+        }
+        .dedecek-arm-right {
+            right: 2px;
+            transform: rotate(-30deg);
+        }
+        .dedecek-staff {
+            position: absolute;
+            width: 4px;
+            height: 60px;
+            background: linear-gradient(to right, #8b4513, #a0522d, #cd853f);
+            top: 45px;
+            right: -20px;
+            border-radius: 2px;
+            z-index: -3;
+            animation: rainbow-grandpa 10s infinite alternate;
+        }
+        .dedecek-staff-top {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            border-radius: 50%;
+            top: 42px;
+            right: -23px;
+            box-shadow: 0 0 10px #add8e6;
+            z-index: -2;
+            animation: rainbow-text 5s infinite;
+        }
+        .dedecek-hand {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #a9a9a9;
+            border-radius: 50%;
+            z-index: 12;
+            animation: rainbow-grandpa 10s infinite alternate;
+        }
+        .dedecek-hand-left {
+            left: 0;
+            top: 50px;
+        }
+        .dedecek-hand-right {
+            right: -15px;
+            top: 50px;
+        }
+        .person-face {
+            width: 100px;
+            height: 120px;
+            background: linear-gradient(45deg, #f9d9b4, #ffe4c4, #f5deb3, #ffdab9);
+            border-radius: 50% 50% 45% 45%;
+            border: 3px solid transparent;
+            border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            border-image-slice: 1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+            margin: 0 auto;
+            animation: rainbow-person 8s infinite alternate;
+        }
+        
+        @keyframes rainbow-person {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(60deg); }
+        }
+        
+        .eye {
+            position: absolute;
+            width: 18px;
+            height: 22px;
+            background-color: white;
+            border-radius: 50%;
+            top: 40px;
+            z-index: 3;
+            border: 2px solid #333;
+        }
+        .eye-left {
+            left: 25px;
+        }
+        .eye-right {
+            right: 25px;
+        }
+        .pupil {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 50%;
+            top: 6px;
+            left: 4px;
+        }
+        .eyebrow {
+            position: absolute;
+            width: 20px;
+            height: 6px;
+            background-color: #333;
+            top: 30px;
+            z-index: 4;
+            border-radius: 3px;
+        }
+        .eyebrow-left {
+            left: 24px;
+            transform: rotate(-10deg);
+        }
+        .eyebrow-right {
+            right: 24px;
+            transform: rotate(10deg);
+        }
+        .mouth {
+            position: absolute;
+            width: 40px;
+            height: 15px;
+            background: linear-gradient(to right, #ff0000, #ff4500, #ff6347);
+            border-radius: 0 0 20px 20px;
+            bottom: 25px;
+            left: 50%;
+            margin-left: -20px;
+            z-index: 3;
+            border-top: 2px solid #990000;
+            animation: rainbow-mouth 8s infinite alternate;
+        }
+        
+        @keyframes rainbow-mouth {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        
+        .red-nose {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(to bottom right, #ff0000, #ff4500);
+            border-radius: 50%;
+            top: 62px;
+            left: 50%;
+            margin-left: -12px;
+            border: 1px solid #990000;
+            z-index: 5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            animation: rainbow-mouth 8s infinite alternate;
+        }
+        .person::before, .person::after {
+            content: '';
+            position: absolute;
+            top: -45px;
+            width: 20px;
+            height: 70px;
+            background: linear-gradient(to bottom, #444, #696969, #808080);
+            border-radius: 50% 50% 0 0;
+            z-index: 2;
+            animation: rainbow-person 8s infinite alternate;
+        }
+        .person::before {
+            left: 50%;
+            margin-left: -35px;
+            transform: rotate(-5deg);
+            transform-origin: bottom center;
+        }
+        .person::after {
+            right: 50%;
+            margin-right: -35px;
+            transform: rotate(5deg);
+            transform-origin: bottom center;
+        }
+        .person p {
+            font-weight: bold;
+            font-size: 1.2rem;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-top: 10px;
+        }
+        .arm {
+            position: absolute;
+            width: 15px;
+            height: 80px;
+            background: linear-gradient(to bottom, #444, #696969, #808080);
+            border-radius: 5px;
+            z-index: 0;
+            animation: rainbow-person 8s infinite alternate;
+        }
+        .arm-left {
+            left: 20px;
+            top: 50px;
+            transform-origin: top center;
+            transform: rotate(-10deg);
+        }
+        .arm-right {
+            right: 20px;
+            top: 50px;
+            transform-origin: top center;
+            transform: rotate(10deg);
+        }
+        .leg {
+            position: absolute;
+            width: 20px;
+            height: 90px;
+            background: linear-gradient(to bottom, #444, #696969, #808080);
+            border-radius: 5px;
+            bottom: -80px;
+            z-index: 0;
+            animation: rainbow-person 8s infinite alternate;
+        }
+        .leg-left {
+            left: 60px;
+            transform-origin: top center;
+        }
+        .leg-right {
+            right: 60px;
+            transform-origin: top center;
+        }
+        .house {
+            margin-top: 20px;
+            position: relative;
+        }
+        .house img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 3px solid transparent;
+            border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            border-image-slice: 1;
+        }
+        .house p {
+            font-weight: bold;
+            font-size: 1.2rem;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-top: 10px;
+        }
+        .rytir {
+            margin-top: 20px;
+            position: relative;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .rytir-container {
+            position: relative;
+            width: 180px;
+            margin: 0 auto;
+        }
+        .rytir-head {
+            width: 40px;
+            height: 50px;
+            background: linear-gradient(45deg, #c0c0c0, #a9a9a9, #d3d3d3, #silver);
+            border-radius: 50% 50% 20% 20%;
+            position: relative;
+            border: 2px solid #999;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
+            z-index: 3;
+            animation: rainbow-knight 8s infinite alternate;
+        }
+        
+        @keyframes rainbow-knight {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(90deg); }
+        }
+        
+        .rytir-helmet {
+            position: absolute;
+            width: 45px;
+            height: 25px;
+            background: linear-gradient(45deg, #a9a9a9, #c0c0c0, #d3d3d3);
+            border-radius: 50% 50% 20% 20%;
+            top: -15px;
+            left: -2px;
+            border: 2px solid #999;
+            z-index: 4;
+            animation: rainbow-knight 8s infinite alternate;
+        }
+        .rytir-visor {
+            position: absolute;
+            width: 30px;
+            height: 15px;
+            background: linear-gradient(to bottom, #333, #444, #555);
+            border-radius: 5px;
+            top: 12px;
+            left: 5px;
+            border: 1px solid #666;
+            z-index: 5;
+            animation: rainbow-knight 8s infinite alternate;
+        }
+        .rytir-body {
+            width: 60px;
+            height: 80px;
+            background: linear-gradient(45deg, #c0c0c0, #a9a9a9, #d3d3d3, #silver);
+            border-radius: 20px 20px 30px 30px;
+            position: absolute;
+            top: 45px;
+            left: 60px;
+            border: 2px solid #999;
+            z-index: 2;
+            animation: rainbow-knight 8s infinite alternate;
+        }
+        .rytir-shield {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            background: linear-gradient(45deg, #cd7f32, #b8860b, #daa520);
+            border-radius: 5px 20px 20px 5px;
+            top: 55px;
+            left: 30px;
+            border: 2px solid #996515;
+            z-index: 1;
+            animation: rainbow-knight 8s infinite alternate;
+        }
+        .rytir-shield-emblem {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            border-radius: 50%;
+            top: 20px;
+            left: 10px;
+            z-index: 2;
+            animation: rainbow-text 5s infinite;
+        }
+        .rytir-sword {
+            position: absolute;
+            width: 10px;
+            height: 80px;
+            background: linear-gradient(to bottom, #c0c0c0, #a9a9a9, #d3d3d3);
+            top: 40px;
+            right: 40px;
+            border-radius: 2px;
+            border: 1px solid #999;
+            z-index: 1;
+            transform: rotate(-20deg);
+            transform-origin: top center;
+            animation: rainbow-knight 8s infinite alternate;
+        }
+        .rytir-sword-handle {
+            position: absolute;
+            width: 24px;
+            height: 8px;
+            background: linear-gradient(45deg, #cd7f32, #b8860b, #daa520);
+            border-radius: 2px;
+            top: 35px;
+            right: 33px;
+            border: 1px solid #996515;
+            z-index: 2;
+            transform: rotate(-20deg);
+            transform-origin: center right;
+            animation: rainbow-knight 8s infinite alternate;
+        }
+        .rytir-leg {
+            position: absolute;
+            width: 15px;
+            height: 50px;
+            background: linear-gradient(45deg, #a9a9a9, #c0c0c0, #d3d3d3);
+            border-radius: 5px;
+            top: 120px;
+            border: 1px solid #999;
+            z-index: 1;
+            animation: rainbow-knight 8s infinite alternate;
+        }
+        .rytir-leg-left {
+            left: 70px;
+        }
+        .rytir-leg-right {
+            left: 95px;
+        }
+        .rytir-foot {
+            position: absolute;
+            width: 20px;
+            height: 10px;
+            background: linear-gradient(45deg, #a9a9a9, #c0c0c0, #d3d3d3);
+            border-radius: 5px;
+            top: 165px;
+            border: 1px solid #999;
+            z-index: 1;
+            animation: rainbow-knight 8s infinite alternate;
+        }
+        .rytir-foot-left {
+            left: 67px;
+        }
+        .rytir-foot-right {
+            left: 92px;
+        }
+        .dots-container {
+            margin-top: 20px;
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .dot {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            border-radius: 50%;
+            animation: dot-float 4s infinite;
+        }
+        
+        @keyframes dot-float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-200px) translateX(var(--x-offset));
+                opacity: 0;
+            }
+        }
+        .people-container {
+            margin-top: 20px;
+            position: relative;
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            background: linear-gradient(to bottom, #87CEEB, #00BFFF, #1E90FF);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .beach-sand {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(to bottom, #F4A460, #DEB887, #D2B48C);
+            border-radius: 0 0 10px 10px;
+        }
+        .palm-tree {
+            position: absolute;
+            bottom: 60px;
+            right: 20px;
+            width: 40px;
+            height: 80px;
+        }
+        .palm-trunk {
+            width: 10px;
+            height: 60px;
+            background: #8B4513;
+            margin: 0 auto;
+        }
+        .palm-leaves {
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            background: #228B22;
+            border-radius: 50%;
+            transform: rotate(45deg);
+        }
+        .palm-leaves::before, .palm-leaves::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #228B22;
+            border-radius: 50%;
+        }
+        .palm-leaves::before {
+            top: -20px;
+            left: -20px;
+            transform: rotate(-45deg);
+        }
+        .palm-leaves::after {
+            top: -20px;
+            right: -20px;
+            transform: rotate(45deg);
+        }
+        .sun {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: #FFD700;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #FFD700;
+            animation: sun-glow 2s infinite alternate;
+        }
+        
+        @keyframes sun-glow {
+            0% { box-shadow: 0 0 20px #FFD700; }
+            100% { box-shadow: 0 0 40px #FFD700; }
+        }
+        
+        .wave {
+            position: absolute;
+            bottom: 60px;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+            animation: wave-move 3s infinite linear;
+        }
+        
+        @keyframes wave-move {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .stick-person {
+            position: relative;
+            width: 40px;
+            height: 100px;
+            animation: person-bounce 2s infinite;
+        }
+        
+        @keyframes person-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .stick-head {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 10px;
+            animation: rainbow-text 5s infinite;
+        }
+        .stick-body {
+            width: 4px;
+            height: 40px;
+            background: #333;
+            position: absolute;
+            top: 20px;
+            left: 18px;
+        }
+        .stick-arm {
+            width: 30px;
+            height: 4px;
+            background: #333;
+            position: absolute;
+            top: 30px;
+            left: 5px;
+            transform-origin: left center;
+            animation: arm-wave 1s infinite;
+        }
+        
+        @keyframes arm-wave {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(20deg); }
+        }
+        
+        .stick-leg {
+            width: 4px;
+            height: 40px;
+            background: #333;
+            position: absolute;
+            bottom: 0;
+        }
+        .stick-leg-left {
+            left: 15px;
+            transform-origin: top center;
+            animation: leg-kick 1s infinite;
+        }
+        .stick-leg-right {
+            right: 15px;
+            transform-origin: top center;
+            animation: leg-kick 1s infinite 0.5s;
+        }
+        
+        @keyframes leg-kick {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(15deg); }
+        }
+        .water-container {
+            margin-top: 20px;
+            position: relative;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to bottom, #1e90ff, #00bfff, #87ceeb);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .water-wave {
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+            animation: wave 3s infinite linear;
+            top: 0;
+            left: -50%;
+            filter: blur(2px);
+        }
+        
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); }
+        }
+        
+        .boat {
+            position: absolute;
+            width: 120px;
+            height: 40px;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-15deg);
+            animation: boat-sink 3s infinite ease-in-out;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+        
+        @keyframes boat-sink {
+            0%, 100% { transform: translateX(-50%) rotate(-15deg) translateY(0); }
+            50% { transform: translateX(-50%) rotate(-15deg) translateY(5px); }
+        }
+        
+        .boat-hull {
+            position: absolute;
+            width: 120px;
+            height: 20px;
+            background: linear-gradient(45deg, #8B4513, #A0522D, #CD853F);
+            border-radius: 0 0 50% 50%;
+            bottom: 0;
+            border: 2px solid #654321;
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .boat-mast {
+            position: absolute;
+            width: 4px;
+            height: 40px;
+            background: linear-gradient(to bottom, #8B4513, #654321);
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-15deg);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .boat-sail {
+            position: absolute;
+            width: 40px;
+            height: 30px;
+            background: linear-gradient(45deg, #000, #333);
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-15deg);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            border: 1px solid #444;
+            animation: sail-torn 3s infinite ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .skull-flag {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(45deg, #000, #333);
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-15deg);
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .skull-flag::before {
+            content: '☠';
+            position: absolute;
+            color: white;
+            font-size: 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .boat-cannon {
+            position: absolute;
+            width: 15px;
+            height: 8px;
+            background: linear-gradient(45deg, #444, #333);
+            border-radius: 4px;
+            bottom: 15px;
+            opacity: 0.9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cannonball {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: linear-gradient(45deg, #000, #333);
+            border-radius: 50%;
+            bottom: 12px;
+            opacity: 0.9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .boat-window {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(45deg, #000, #333);
+            border-radius: 50%;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2);
+        }
+        
+        .boat-debris {
+            position: absolute;
+            width: 20px;
+            height: 10px;
+            background: linear-gradient(45deg, #8B4513, #A0522D);
+            border-radius: 2px;
+            animation: debris-float 3s infinite ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes debris-float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(10px, 5px) rotate(15deg); }
+        }
+        
+        .snake {
+            position: relative;
+            width: 200px;
+            height: 40px;
+            margin: 20px auto;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        }
+        
+        .snake-body {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, #32cd32, #228b22, #006400);
+            border-radius: 50%;
+            animation: snake-slither 3s infinite;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .snake-head {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(45deg, #32cd32, #228b22, #006400);
+            border-radius: 50%;
+            top: -2px;
+            left: -5px;
+            z-index: 2;
+            animation: snake-slither 3s infinite;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes snake-slither {
+            0% { transform: translateX(0) rotate(0deg); }
+            25% { transform: translateX(50px) rotate(20deg); }
+            50% { transform: translateX(100px) rotate(-20deg); }
+            75% { transform: translateX(150px) rotate(20deg); }
+            100% { transform: translateX(0) rotate(0deg); }
+        }
+        
+        .snake-eye {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #000;
+            border-radius: 50%;
+            top: 8px;
+            z-index: 3;
+        }
+        .snake-eye-left {
+            left: 5px;
+        }
+        .snake-eye-right {
+            right: 5px;
+        }
+        .snake-tongue {
+            position: absolute;
+            width: 8px;
+            height: 2px;
+            background: #ff0000;
+            top: 12px;
+            left: -3px;
+            z-index: 3;
+        }
+        .snake-tongue::before, .snake-tongue::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 8px;
+            background: #ff0000;
+            top: -3px;
+        }
+        .snake-tongue::before {
+            left: 2px;
+            transform: rotate(20deg);
+        }
+        .snake-tongue::after {
+            right: 2px;
+            transform: rotate(-20deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Oskar je nejlepší</h1>
+        <div class="characters">
+            <div class="character">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pat_and_Mat_logo.svg/320px-Pat_and_Mat_logo.svg.png" alt="Pat">
+                <p>Pat</p>
+            </div>
+            <div class="character">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pat_and_Mat_logo.svg/320px-Pat_and_Mat_logo.svg.png" alt="Mat">
+                <p>Mat</p>
+            </div>
+            <div class="character">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Chess_piece_-_White_knight.JPG/640px-Chess_piece_-_White_knight.JPG" alt="Rytir">
+                <p>Rytíř</p>
+            </div>
+        </div>
+        <div class="marker">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Marcadores1.jpg/640px-Marcadores1.jpg" alt="Fixa">
+            <p>Fixa</p>
+        </div>
+        <div class="person">
+            <div class="person-container">
+                <div class="dedecek">
+                    <div class="dedecek-glow"></div>
+                    <div class="dedecek-head">
+                        <div class="dedecek-stars"></div>
+                        <div class="dedecek-hair"></div>
+                        <div class="dedecek-beard"></div>
+                        <div class="dedecek-glasses dedecek-glasses-left"></div>
+                        <div class="dedecek-glasses dedecek-glasses-right"></div>
+                        <div class="dedecek-glasses-bridge"></div>
+                        <div class="dedecek-eye dedecek-eye-left"></div>
+                        <div class="dedecek-eye dedecek-eye-right"></div>
+                        <div class="dedecek-eyebrow dedecek-eyebrow-left"></div>
+                        <div class="dedecek-eyebrow dedecek-eyebrow-right"></div>
+                        <div class="dedecek-wrinkles">
+                            <div class="dedecek-wrinkle dedecek-wrinkle1"></div>
+                            <div class="dedecek-wrinkle dedecek-wrinkle2"></div>
+                            <div class="dedecek-wrinkle dedecek-wrinkle3"></div>
+                            <div class="dedecek-wrinkle dedecek-wrinkle4"></div>
+                            <div class="dedecek-wrinkle dedecek-wrinkle5"></div>
+                            <div class="dedecek-wrinkle dedecek-wrinkle6"></div>
+                            <div class="dedecek-wrinkle dedecek-wrinkle7"></div>
+                        </div>
+                    </div>
+                    <div class="dedecek-body"></div>
+                    <div class="dedecek-arm dedecek-arm-left"></div>
+                    <div class="dedecek-arm dedecek-arm-right"></div>
+                    <div class="dedecek-hand dedecek-hand-left"></div>
+                    <div class="dedecek-hand dedecek-hand-right"></div>
+                    <div class="dedecek-staff"></div>
+                    <div class="dedecek-staff-top"></div>
+                </div>
+                <div class="babicka">
+                    <div class="babicka-head">
+                        <div class="babicka-hair"></div>
+                        <div class="babicka-hairtuft"></div>
+                        <div class="babicka-bow"></div>
+                        <div class="babicka-eye babicka-eye-left"></div>
+                        <div class="babicka-eye babicka-eye-right"></div>
+                        <div class="babicka-cheek babicka-cheek-left"></div>
+                        <div class="babicka-cheek babicka-cheek-right"></div>
+                        <div class="babicka-pacifier"></div>
+                        <div class="babicka-drool"></div>
+                    </div>
+                    <div class="babicka-body"></div>
+                    <div class="babicka-arm babicka-arm-left"></div>
+                    <div class="babicka-arm babicka-arm-right"></div>
+                </div>
+                <div class="food-plate"></div>
+                <div class="food spaghetti"></div>
+                <div class="food meatball meatball1"></div>
+                <div class="food meatball meatball2"></div>
+                <div class="food meatball meatball3"></div>
+                <div class="food sauce"></div>
+                <div class="person-face">
+                    <div class="eye eye-left">
+                        <div class="pupil"></div>
+                    </div>
+                    <div class="eye eye-right">
+                        <div class="pupil"></div>
+                    </div>
+                    <div class="eyebrow eyebrow-left"></div>
+                    <div class="eyebrow eyebrow-right"></div>
+                    <div class="red-nose"></div>
+                    <div class="mouth"></div>
+                </div>
+                <div class="arm arm-left"></div>
+                <div class="arm arm-right"></div>
+                <div class="leg leg-left"></div>
+                <div class="leg leg-right"></div>
+            </div>
+            <p>Člověk s dlouhýma ušima, rukama a nohama, obličejem, jídlem, 90 trilionů let starým dědečkem a roční babičkou na hlavě</p>
+        </div>
+        <div class="house">
+            <img src="https://i.ytimg.com/vi/YPIp6i3SVUk/maxresdefault.jpg" alt="Dům Pata a Mata">
+            <p>Dům Pata a Mata</p>
+        </div>
+        
+        <div class="rytir">
+            <div class="rytir-container">
+                <div class="rytir-head">
+                    <div class="rytir-helmet"></div>
+                    <div class="rytir-visor"></div>
+                </div>
+                <div class="rytir-body"></div>
+                <div class="rytir-shield">
+                    <div class="rytir-shield-emblem"></div>
+                </div>
+                <div class="rytir-sword"></div>
+                <div class="rytir-sword-handle"></div>
+                <div class="rytir-leg rytir-leg-left"></div>
+                <div class="rytir-leg rytir-leg-right"></div>
+                <div class="rytir-foot rytir-foot-left"></div>
+                <div class="rytir-foot rytir-foot-right"></div>
+            </div>
+            <p>Rytíř v lesklé zbroji</p>
+        </div>
+
+        <div class="dots-container">
+            <script>
+                for (let i = 0; i < 100; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'dot';
+                    dot.style.left = Math.random() * 100 + '%';
+                    dot.style.top = '100%';
+                    dot.style.setProperty('--x-offset', (Math.random() * 200 - 100) + 'px');
+                    dot.style.animationDelay = Math.random() * 4 + 's';
+                    document.querySelector('.dots-container').appendChild(dot);
+                }
+            </script>
+            <p>100 teček</p>
+        </div>
+
+        <div class="people-container">
+            <div class="beach-sand"></div>
+            <div class="palm-tree">
+                <div class="palm-trunk"></div>
+                <div class="palm-leaves"></div>
+            </div>
+            <div class="sun"></div>
+            <div class="wave"></div>
+            <div class="wave" style="animation-delay: 1.5s;"></div>
+            <script>
+                for (let i = 0; i < 5; i++) {
+                    const person = document.createElement('div');
+                    person.className = 'stick-person';
+                    person.style.animationDelay = (i * 0.2) + 's';
+                    
+                    const head = document.createElement('div');
+                    head.className = 'stick-head';
+                    
+                    const body = document.createElement('div');
+                    body.className = 'stick-body';
+                    
+                    const arm = document.createElement('div');
+                    arm.className = 'stick-arm';
+                    arm.style.animationDelay = (i * 0.2) + 's';
+                    
+                    const legLeft = document.createElement('div');
+                    legLeft.className = 'stick-leg stick-leg-left';
+                    
+                    const legRight = document.createElement('div');
+                    legRight.className = 'stick-leg stick-leg-right';
+                    
+                    person.appendChild(head);
+                    person.appendChild(body);
+                    person.appendChild(arm);
+                    person.appendChild(legLeft);
+                    person.appendChild(legRight);
+                    
+                    document.querySelector('.people-container').appendChild(person);
+                }
+            </script>
+            <p>Tančící lidé na pláži</p>
+        </div>
+
+        <div class="water-container">
+            <div class="water-wave"></div>
+            <div class="water-wave" style="animation-delay: 1.5s;"></div>
+            <div class="boat">
+                <div class="boat-hull">
+                    <div class="boat-crack boat-crack1"></div>
+                    <div class="boat-crack boat-crack2"></div>
+                    <div class="boat-crack boat-crack3"></div>
+                    <div class="boat-cannon boat-cannon-left"></div>
+                    <div class="boat-cannon boat-cannon-right"></div>
+                    <div class="cannonball cannonball-left"></div>
+                    <div class="cannonball cannonball-right"></div>
+                    <div class="boat-window"></div>
+                </div>
+                <div class="boat-mast"></div>
+                <div class="boat-sail"></div>
+                <div class="skull-flag"></div>
+            </div>
+            <script>
+                for (let i = 0; i < 5; i++) {
+                    const debris = document.createElement('div');
+                    debris.className = 'boat-debris';
+                    debris.style.left = (Math.random() * 100) + '%';
+                    debris.style.top = (Math.random() * 100) + '%';
+                    debris.style.animationDelay = (Math.random() * 2) + 's';
+                    document.querySelector('.water-container').appendChild(debris);
+                }
+            </script>
+            <div class="snake">
+                <div class="snake-head">
+                    <div class="snake-eye snake-eye-left"></div>
+                    <div class="snake-eye snake-eye-right"></div>
+                    <div class="snake-tongue"></div>
+                </div>
+                <script>
+                    for (let i = 0; i < 8; i++) {
+                        const bodyPart = document.createElement('div');
+                        bodyPart.className = 'snake-body';
+                        bodyPart.style.left = (i * 20) + 'px';
+                        bodyPart.style.animationDelay = (i * 0.1) + 's';
+                        document.querySelector('.snake').appendChild(bodyPart);
+                    }
+                </script>
+            </div>
+            <p>Pirátská loď a plaz ve vodě</p>
+        </div>
+    </div>
+</body>
+</html> 
